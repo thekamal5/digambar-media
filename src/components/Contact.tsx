@@ -69,7 +69,7 @@ const Contact = () => {
                 {["Instagram", "LinkedIn", "Twitter"].map((social) => (
                   <a
                     key={social}
-                    href="#"
+                    href="https://www.linkedin.com/in/findkamalshrestha/"
                     className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1"
                   >
                     {social}
