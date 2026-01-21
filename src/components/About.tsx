@@ -220,7 +220,7 @@ const About = () => {
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="text-[120px] lg:text-[200px] font-bold text-foreground whitespace-nowrap select-none"
           >
-            STRATEGY • CREATIVITY • IMPACT • STORIES •
+            {/* STRATEGY • CREATIVITY • IMPACT • STORIES • */}
           </motion.p>
         </motion.div>
       </div>

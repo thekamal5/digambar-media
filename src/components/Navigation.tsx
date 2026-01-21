@@ -37,6 +37,7 @@ const Navigation = () => {
           <a href="#" className="flex items-center gap-2">
             <span className="text-xl font-bold tracking-tight text-foreground">
               Digambar<span className="text-primary">Media</span>
+              {/* <img src="http" */}
             </span>
           </a>
 
