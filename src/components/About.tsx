@@ -36,10 +36,14 @@ const About = () => {
                   <motion.svg
                     className="absolute -bottom-2 left-0 w-full"
                     viewBox="0 0 200 12"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
+                    initial={{ pathLength: 0, opacity: 0, rotate: -3 }}
+                    whileInView={{ pathLength: 1, opacity: 1, rotate: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
+                    transition={{
+                      pathLength: { duration: 0.8, delay: 0.5 },
+                      opacity: { duration: 0.3, delay: 0.5 },
+                      rotate: { duration: 0.6, delay: 1.2, ease: "easeOut" }
+                    }}
                   >
                     <motion.path
                       d="M2 8 Q50 2 100 8 Q150 14 198 6"
@@ -85,7 +89,7 @@ const About = () => {
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
-              
+
               {/* Floating quote */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -147,10 +151,30 @@ const About = () => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { value: "50+", label: "Projects", color: "from-amber-400 to-orange-500" },
-                { value: "8", label: "Years", color: "from-sky-400 to-blue-500" },
-                { value: "30+", label: "Clients", color: "from-emerald-400 to-teal-500" },
-                { value: "∞", label: "Ideas", color: "from-violet-400 to-purple-500" },
+                {
+                  value: "50+",
+                  label: "Projects",
+                  color: "from-amber-400 to-orange-500",
+                  details: "Delivered Excellence across diverse industries."
+                },
+                {
+                  value: "8",
+                  label: "Years",
+                  color: "from-sky-400 to-blue-500",
+                  details: "Of dedication, learning, and growth."
+                },
+                {
+                  value: "30+",
+                  label: "Clients",
+                  color: "from-emerald-400 to-teal-500",
+                  details: "Trusting us with their brand vision."
+                },
+                {
+                  value: "∞",
+                  label: "Ideas",
+                  color: "from-violet-400 to-purple-500",
+                  details: "Limitless creativity for every challenge."
+                },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -158,16 +182,30 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="relative bg-card p-6 rounded-2xl shadow-card group overflow-hidden"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="relative bg-card p-6 rounded-2xl shadow-card group overflow-hidden cursor-pointer h-32 flex flex-col justify-center"
                 >
                   <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                   />
-                  <span className={`text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                    {stat.value}
-                  </span>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+
+                  {/* Default Content */}
+                  <div className="relative z-10 group-hover:opacity-0 transition-opacity duration-200 absolute inset-0 flex flex-col justify-center items-center p-4">
+                    <span className={`text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                      {stat.value}
+                    </span>
+                    <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  </div>
+
+                  {/* Hover Pop-up Content */}
+                  <div className="absolute inset-0 z-20 flex flex-col justify-center items-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-card/95 backdrop-blur-sm">
+                    <p className={`font-bold text-lg bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>
+                      {stat.label}
+                    </p>
+                    <p className="text-xs text-muted-foreground font-medium leading-tight">
+                      {stat.details}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

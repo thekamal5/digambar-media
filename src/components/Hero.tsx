@@ -4,18 +4,27 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+      {/* Cheerful creative dynamic video background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <video
+          className="w-full h-full object-cover opacity-100" // Increased opacity for better visibility
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" // Fallback image
+        >
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Overlay to ensure text readability while maintaining vibrancy - Adjusted opacity */}
+        <div className="absolute inset-0 bg-background/30 backdrop-blur-[1px]" />
+
+        {/* Additional gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background/80" />
       </div>
 
-      {/* Gradient orb */}
-      <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-
-      <div className="container mx-auto px-6 lg:px-12 pt-24">
+      <div className="container mx-auto px-6 lg:px-12 pt-24 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,21 +80,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
-          >
-            <div className="w-1 h-2 bg-primary rounded-full" />
-          </motion.div>
-        </motion.div>
+
       </div>
     </section>
   );
