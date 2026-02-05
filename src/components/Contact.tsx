@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Send, Mail, MapPin, ArrowUpRight, Phone } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,18 +47,30 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email us at</p>
-                  <a href="mailto:hello@digambarmedia.com" className="font-medium text-foreground hover:text-primary transition-colors">
-                    hello@digambarmedia.com
+                  <a href="mailto:officialthedigambar@gmail.com" className="font-medium text-foreground hover:text-primary transition-colors">
+                    officialthedigambar@gmail.com
                   </a>
                 </div>
               </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Call us at</p>
+                  <a href="tel:+9779815718504" className="font-medium text-foreground hover:text-primary transition-colors">
+                    +977 9815718504
+                  </a>
+                </div>
+              </div>
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Based in</p>
-                  <p className="font-medium text-foreground">Mumbai, India</p>
+                  <p className="font-medium text-foreground">Lokanthali, Bhaktapur</p>
                 </div>
               </div>
             </div>
@@ -66,13 +78,17 @@ const Contact = () => {
             <div className="flex items-center gap-4 mt-12">
               <span className="text-sm text-muted-foreground">Follow us</span>
               <div className="flex items-center gap-3">
-                {["Instagram", "LinkedIn", "Twitter"].map((social) => (
+                {[
+                  { name: "Facebook", link: "https://www.facebook.com/digambarmedia" },
+                  { name: "Instagram", link: "#" },
+                  { name: "LinkedIn", link: "https://www.linkedin.com/in/findkamalshrestha/" }
+                ].map((social) => (
                   <a
-                    key={social}
-                    href="https://www.linkedin.com/in/findkamalshrestha/"
+                    key={social.name}
+                    href={social.link}
                     className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1"
                   >
-                    {social}
+                    {social.name}
                     <ArrowUpRight className="w-3 h-3" />
                   </a>
                 ))}

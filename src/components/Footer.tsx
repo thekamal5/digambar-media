@@ -14,10 +14,10 @@ const footerLinks = {
     { label: "Contact", href: "#contact" },
   ],
   social: [
+    { label: "Facebook", href: "https://www.facebook.com/digambarmedia" },
     { label: "Instagram", href: "#" },
     { label: "LinkedIn", href: "#" },
     { label: "Twitter", href: "#" },
-    { label: "Vimeo", href: "#" },
   ],
 };
 

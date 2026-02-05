@@ -4,24 +4,18 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Cheerful creative dynamic video background */}
+      {/* Hero Banner Image Background */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <video
-          className="w-full h-full object-cover opacity-100" // Increased opacity for better visibility
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" // Fallback image
-        >
-          <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_25fps.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay to ensure text readability while maintaining vibrancy - Adjusted opacity */}
-        <div className="absolute inset-0 bg-background/30 backdrop-blur-[1px]" />
+        <img
+          src="/hero-banner.png"
+          alt="Digambar Media Hero Banner"
+          className="w-full h-full object-cover opacity-100"
+        />
+        {/* Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-background/50 backdrop-blur-[2px]" />
 
         {/* Additional gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background/90" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 pt-24 relative z-10">
