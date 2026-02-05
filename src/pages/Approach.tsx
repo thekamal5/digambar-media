@@ -11,22 +11,22 @@ const processSteps = [
     {
         number: "01",
         title: "Research & Insight",
-        description: "We begin by understanding the brand, audience, context, and challenges. Through **branding research in Nepal** and listening, we uncover insights that shape every strategic decision."
+        description: "We begin by understanding the brand, audience, context, and challenges. Through branding research in Nepal and listening, we uncover insights that shape every strategic decision."
     },
     {
         number: "02",
         title: "Strategy & Direction",
-        description: "Based on insights, we develop a clear strategy that defines positioning, messaging, tone, and direction. This **brand strategy foundation** guides social media marketing Nepal, creative campaigns, and content."
+        description: "Based on insights, we develop a clear strategy that defines positioning, messaging, tone, and direction. This brand strategy foundation guides social media marketing Nepal, creative campaigns, and content."
     },
     {
         number: "03",
         title: "Creativity & Production",
-        description: "We translate strategy into creative outcomes—designing brand identities, crafting campaigns, and implementing a professional **video production workflow in Nepal** that connects emotionally."
+        description: "We translate strategy into creative outcomes—designing brand identities, crafting campaigns, and implementing a professional video production workflow in Nepal that connects emotionally."
     },
     {
         number: "04",
         title: "Delivery & Impact",
-        description: "We execute with care and measure impact wherever possible. Our focus is on clarity, consistency, and meaningful engagement for brands in the **Kathmandu market** and beyond."
+        description: "We execute with care and measure impact wherever possible. Our focus is on clarity, consistency, and meaningful engagement for brands in the Kathmandu market and beyond."
     }
 ];
 
@@ -42,10 +42,10 @@ const ApproachPage = () => {
     return (
         <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 font-sans">
             <Helmet>
-                <title>Our Approach | Strategic Branding & Digital Marketing Process Nepal</title>
-                <meta name="description" content="Discover Digambar Media’s approach to strategic branding and digital marketing in Nepal. Our process blends research, strategy, and creative storytelling in Kathmandu for maximum impact." />
-                <meta name="keywords" content="strategic branding process nepal, digital marketing strategy kathmandu, branding agency approach nepal, social media marketing strategy nepal, creative campaign process, video production workflow nepal" />
-                <meta property="og:title" content="Our Approach | Strategic Branding & Marketing Process Nepal" />
+                <title>Our Approach | Strategic Branding & Digital Strategy Nepal</title>
+                <meta name="description" content="Discover Digambar Media’s approach to strategic branding and digital strategy in Nepal. Our process blends marketing and video production Nepal with high-impact content creation." />
+                <meta name="keywords" content="digital strategy nepal, content creation nepal, video branding nepal, marketing and video production nepal, strategic branding process nepal, branding agency approach nepal" />
+                <meta property="og:title" content="Our Approach | Strategic Branding & Digital Strategy Nepal" />
                 <meta property="og:description" content="Discover our strategy-led approach to branding, social media, and video production in Nepal." />
             </Helmet>
 
@@ -62,10 +62,11 @@ const ApproachPage = () => {
                             className="max-w-4xl"
                         >
                             <h1 className="text-6xl md:text-8xl font-bold font-display tracking-tight mb-8">
-                                Our Approach
+                                Our <br />
+                                <span className="text-primary italic">Approach</span>
                             </h1>
                             <p className="text-xl md:text-3xl text-muted-foreground leading-relaxed max-w-3xl">
-                                Our work is guided by a clear, thoughtful process that blends research, strategy, creativity, and storytelling—helping brands communicate with purpose and impact.
+                                Our work is guided by a clear, thoughtful digital strategy Nepal that blends research, creativity, and storytelling—helping brands communicate with purpose and impact.
                             </p>
                         </motion.div>
                     </div>
@@ -83,24 +84,34 @@ const ApproachPage = () => {
 
                 {/* 2. INTRODUCTION SECTION */}
                 <section className="px-6 lg:px-12 py-20 lg:py-32 bg-secondary/20">
-                    <div className="container mx-auto max-w-4xl text-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-bold font-display mb-8"
-                        >
-                            A Strategy-Led Way of Working
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="text-xl leading-loose text-foreground/80"
-                        >
-                            At Digambar Media, we believe strong communication starts with understanding. Every project begins with research and insight, followed by strategic thinking and creative execution. Our approach ensures that branding, social media marketing, campaigns, and storytelling are not only visually compelling but also purposeful and effective.
-                        </motion.p>
+                    <div className="container mx-auto max-w-5xl">
+                        <div className="grid lg:grid-cols-2 gap-16 items-start">
+                            <motion.h2
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="text-4xl md:text-5xl font-bold font-display"
+                            >
+                                A Strategy-Led Way of Working in Nepal
+                            </motion.h2>
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="space-y-6 text-xl leading-relaxed text-foreground/80"
+                            >
+                                <p>
+                                    At Digambar Media, we believe strong communication starts with understanding the unique Kathmandu market. Every project begins with research and insight, followed by digital strategy Nepal and creative execution.
+                                </p>
+                                <p>
+                                    Our approach ensures that content creation Nepal, social media marketing, and storytelling are not only visually compelling but also purposeful. We specialize in video branding Nepal, ensuring your visual narrative aligns perfectly with your brand's core values.
+                                </p>
+                                <p>
+                                    As a premier provider of marketing and video production Nepal, we bridge the gap between abstract ideas and tangible results. We don't just create; we curate experiences that resonate with the Nepalese audience.
+                                </p>
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
 
@@ -109,6 +120,9 @@ const ApproachPage = () => {
                     <div className="container mx-auto relative z-10">
                         <div className="mb-24 text-center">
                             <h2 className="text-5xl md:text-7xl font-bold font-display">How We Work</h2>
+                            <p className="text-xl text-muted-foreground mt-6 max-w-2xl mx-auto">
+                                Our documented marketing and video production Nepal workflow ensures transparency and excellence at every stage.
+                            </p>
                         </div>
 
                         <div className="relative max-w-5xl mx-auto">
@@ -142,7 +156,7 @@ const ApproachPage = () => {
                                                 {step.description}
                                             </p>
                                         </div>
-                                        <div className="flex-1 hidden md:block" /> {/** Spacer for layout balance */}
+                                        <div className="flex-1 hidden md:block" /> {/ Spacer for layout balance */}
                                     </motion.div>
                                 ))}
                             </div>
@@ -162,8 +176,11 @@ const ApproachPage = () => {
                                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-8 text-primary">
                                     Why Our Approach Works
                                 </h2>
-                                <p className="text-xl leading-relaxed opacity-90">
-                                    Our process balances thinking and making. By aligning strategy with creativity, we ensure that every output—from a social media campaign to a long-form documentary—serves a clear purpose and creates real value for brands and communities.
+                                <p className="text-xl leading-relaxed opacity-90 mb-6">
+                                    Our process balances thinking and making. By aligning digital strategy Nepal with high-end creativity, we ensure that every output—from a social media campaign to a long-form documentary—serves a clear purpose and creates real value for brands in Nepal.
+                                </p>
+                                <p className="text-lg opacity-80 leading-relaxed">
+                                    Integration is key. We combine content creation Nepal with data-driven insights to maximize reach and engagement. Our approach is not just about looking good; it's about performing well in the competitive digital landscape of Kathmandu.
                                 </p>
                             </motion.div>
 
@@ -176,8 +193,11 @@ const ApproachPage = () => {
                                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-8 text-white">
                                     One Approach, Multiple Services
                                 </h2>
-                                <p className="text-xl leading-relaxed opacity-90">
-                                    This approach guides all our services, including brand strategy and identity, social media marketing, creative campaigns, video production, and documentary storytelling. While each project is unique, our process ensures consistency, quality, and impact across all work.
+                                <p className="text-xl leading-relaxed opacity-90 mb-6">
+                                    This methodology guides all our offerings, including brand strategy, social media marketing, and marketing and video production Nepal. While each project is unique, our process ensures consistency, quality, and impact.
+                                </p>
+                                <p className="text-lg opacity-80 leading-relaxed">
+                                    By applying a rigorous digital strategy Nepal across all touchpoints, we help brands build a cohesive presence. Whether it's video branding Nepal or identity design, the strategy remains the foundation of everything we build.
                                 </p>
                             </motion.div>
                         </div>
@@ -193,13 +213,13 @@ const ApproachPage = () => {
                             viewport={{ once: true }}
                             className="text-4xl md:text-6xl font-bold font-display mb-8"
                         >
-                            Let’s Work Together
+                            Ready for a Strategic Partnership?
                         </motion.h2>
                         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-                            If you’re looking for a branding and storytelling partner that values strategy, creativity, and impact, we’d love to collaborate.
+                            If you’re looking for a partner in marketing and video production Nepal that values deep strategy and high-impact storytelling, let's connect.
                         </p>
                         <Link to="/#contact" className="inline-flex items-center px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary-dark transition-all hover:scale-105 shadow-xl shadow-primary/20">
-                            Start a Conversation
+                            Start Your Strategy Session
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
                     </div>

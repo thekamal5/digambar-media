@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,10 +25,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
+            className="mb-8"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-primary/10 rounded-full">
-              Strategic Branding & Digital Marketing Nepal
+            <span className="inline-flex items-center gap-2 px-6 py-2 text-sm font-semibold tracking-[0.2em] text-primary bg-primary/10 rounded-full border border-primary/20 uppercase">
+              Strategic Branding & Visual Storytelling
             </span>
           </motion.div>
 
@@ -35,19 +36,19 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-8"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold leading-[0.9] tracking-tight text-foreground mb-12"
           >
-            A Thinking Partner for <br />
-            <span className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic block mt-2">Digital Marketing & Branding in Nepal</span>.
+            We Build Brands That <br />
+            <span className="text-primary">Speak,</span> Move, and <span className="text-primary">Matter.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12"
           >
-            Specializing in strategic branding, digital marketing Kathmandu, and cinematic video production Nepal for impact-driven brands.
+            As a leading marketing agency Kathmandu, Digambar Media provides comprehensive digital marketing services Nepal, branding services Nepal, and video production services Nepal. We help organizations communicate with clarity, creativity, and purpose through digital strategy Nepal and content creation in Nepal.
           </motion.p>
 
           <motion.div
@@ -63,12 +64,12 @@ const Hero = () => {
               View Our Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="flex items-center gap-2 px-8 py-4 text-base font-semibold text-foreground border-2 border-border rounded-full hover:border-primary hover:text-primary transition-all duration-300"
             >
               Let's Collaborate
-            </a>
+            </Link>
           </motion.div>
         </div>
 

@@ -138,7 +138,7 @@ const About = () => {
                 <h3 className="text-xl font-semibold text-foreground pt-2">Our Philosophy</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                From brand strategy to documentary filmmaking, we bring a holistic perspective to every project, ensuring your message resonates across all touchpoints.
+                As a premier Creative Agency Nepal, we believe strategy-led design is the foundation of growth. From corporate branding Nepal to high-impact marketing and video production Nepal, we bring a holistic perspective to every project, ensuring your message resonates with clarity across all digital touchpoints in Kathmandu and beyond.
               </p>
             </motion.div>
 

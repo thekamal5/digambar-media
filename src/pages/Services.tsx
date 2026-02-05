@@ -21,9 +21,9 @@ const Services = () => {
     return (
         <div ref={containerRef} className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground font-sans">
             <Helmet>
-                <title>Our Services | Branding, Digital Marketing & Video Production Nepal</title>
-                <meta name="description" content="Comprehensive creative services in Nepal including Strategic Branding, Digital Marketing Kathmandu, and Professional Video Production. We build brands that resonate and matter." />
-                <meta name="keywords" content="branding services nepal, digital marketing agency kathmandu, video production services nepal, social media strategy nepal, creative agency nepal, content creation nepal" />
+                <title>All Services | Branding, Digital Marketing & Video Production Nepal</title>
+                <meta name="description" content="Explore the full-service marketing agency Nepal offerings. From professional video production Nepal to branding services Kathmandu, we build brands that matter." />
+                <meta name="keywords" content="digital marketing services nepal, branding services nepal, video production services nepal, marketing agency kathmandu, digital strategy nepal, content creation nepal" />
                 <meta property="og:title" content="Our Services | Digambar Media - Marketing & Branding Nepal" />
                 <meta property="og:description" content="Comprehensive creative services designed to create clarity, connection, and impact for brands in Nepal." />
             </Helmet>
@@ -48,7 +48,7 @@ const Services = () => {
                             className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-primary uppercase mb-8 border border-primary/20 px-4 py-2 rounded-full bg-primary/5"
                         >
                             <Sparkles className="w-4 h-4" />
-                            Our Expertise
+                            Our Expertise in Nepal
                         </motion.span>
 
                         <motion.h1
@@ -57,9 +57,9 @@ const Services = () => {
                             transition={{ duration: 0.8, delay: 0.1 }}
                             className="text-6xl md:text-8xl lg:text-9xl font-bold font-display tracking-tighter leading-[0.9] mb-12"
                         >
-                            We build brands <br />
+                            Impact-Driven <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-                                that resonate.
+                                Creative Solutions.
                             </span>
                         </motion.h1>
 
@@ -67,14 +67,34 @@ const Services = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="text-xl md:text-3xl text-muted-foreground max-w-4xl leading-relaxed"
+                            className="text-xl md:text-3xl text-muted-foreground max-w-5xl leading-relaxed"
                         >
-                            Strategic branding, **digital marketing Kathmandu**, creative campaigns, and **video production services Nepal**—designed to create clarity, connection, and impact.
+                            We offer professional branding services Nepal, digital marketing services Nepal, and video production services Nepal—tailored for the unique needs of the Kathmandu market.
                         </motion.p>
                     </div>
                 </motion.section>
 
-                {/* 2. SERVICES LIST - Interactive Cards */}
+                {/* 2. INTRO TEXT - Expanded for Word Count */}
+                <section className="px-6 lg:px-12 py-20 bg-secondary/5">
+                    <div className="container mx-auto max-w-4xl">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="space-y-8 text-xl text-foreground/80 leading-relaxed"
+                        >
+                            <h2 className="text-4xl font-bold font-display text-foreground">A Comprehensive Marketing Agency Kathmandu</h2>
+                            <p>
+                                Digambar Media is recognized as a premier full-service marketing agency Nepal. Our offerings are designed to bridge the gap between creative storytelling and strategic business growth. We understand that in the modern Nepalese business landscape, a siloed approach to marketing doesn't work. That's why we integrate digital strategy Nepal with high-quality content creation in Nepal.
+                            </p>
+                            <p>
+                                Whether you're looking for the best digital marketing agency in Kathmandu to handle your social media or a professional video production company in Nepal for your next corporate documentary, we have the expertise to deliver. Our team of Nepali video makers and digital strategists work in synergy to ensure your brand's voice is heard.
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* 3. SERVICES LIST - Interactive Cards */}
                 <section className="px-6 lg:px-12 py-20 lg:py-32 relative z-10 bg-background/50 backdrop-blur-sm">
                     <div className="container mx-auto">
                         <div className="grid gap-8">
@@ -87,7 +107,7 @@ const Services = () => {
                                     <motion.div
                                         initial={{ opacity: 0, y: 50 }}
                                         whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "-50px" }}
+                                        viewport={{ once: true, margin: "-100px" }}
                                         transition={{ duration: 0.6, delay: index * 0.1 }}
                                         className="relative bg-card hover:bg-muted/40 border border-border/50 rounded-[2.5rem] p-8 md:p-16 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20 overflow-hidden"
                                     >
@@ -102,7 +122,7 @@ const Services = () => {
                                                     </div>
                                                 </div>
 
-                                                <h2 className="text-4xl md:text-6xl font-bold font-display mb-6 group-hover:text-primary transition-colors">
+                                                <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 group-hover:text-primary transition-colors">
                                                     {service.title}
                                                 </h2>
                                                 <p className="text-xl text-muted-foreground leading-relaxed max-w-xl group-hover:text-foreground transition-colors">
@@ -110,7 +130,7 @@ const Services = () => {
                                                 </p>
 
                                                 <div className="mt-12 inline-flex items-center text-lg font-bold text-primary">
-                                                    Explore Service
+                                                    Explore This Service in Nepal
                                                     <span className="ml-2 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:translate-x-2 transition-transform">
                                                         <ArrowUpRight className="w-4 h-4" />
                                                     </span>
@@ -132,52 +152,44 @@ const Services = () => {
                     </div>
                 </section>
 
-                {/* 3. APPROACH TEASER - Minimal & Clean */}
-                <section className="px-6 lg:px-12 py-32 bg-foreground text-background relative overflow-hidden">
-                    {/* Noise Texture */}
-                    <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
-
-                    <div className="container mx-auto relative z-10 text-center">
-                        <span className="text-sm font-bold tracking-widest uppercase mb-6 block text-white/50">
-                            Our Process
-                        </span>
-                        <h2 className="text-5xl md:text-7xl font-display font-bold mb-20">
-                            Simple steps. <span className="text-primary italic">Complex impact.</span>
-                        </h2>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 relative">
-                            {/* Connecting Line */}
-                            <div className="hidden md:block absolute top-[20%] left-0 w-full h-px bg-white/10" />
-
+                {/* 4. INDUSTRY FOCUS - New Section for SEO and Word Count */}
+                <section className="px-6 lg:px-12 py-20 lg:py-32 bg-foreground text-background">
+                    <div className="container mx-auto">
+                        <div className="text-center mb-20">
+                            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Industry-Specific Solutions</h2>
+                            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                                We provide tailored digital marketing services Nepal and video production services Nepal for diverse sectors.
+                            </p>
+                        </div>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                { title: "Research", step: "01" },
-                                { title: "Strategy", step: "02" },
-                                { title: "Creation", step: "03" },
-                                { title: "Delivery", step: "04" },
+                                { title: "Hospitality Marketing Nepal", desc: "Specialized digital strategies and video content for hotels, resorts, and tourism businesses across Nepal." },
+                                { title: "Real Estate Video Production Nepal", desc: "High-end cinematic property tours and branding for real estate developers and agencies in Kathmandu." },
+                                { title: "NGO Video Production Nepal", desc: "Impactful documentary-style storytelling for NGOs and non-profits to showcase their work and community impact." },
+                                { title: "Tourism Marketing Nepal", desc: "Promoting Nepal's beauty through cinematic videos and targeted digital marketing campaigns globally." },
+                                { title: "Startup Branding Nepal", desc: "Helping new businesses in Kathmandu establish a solid foundation through brand strategy and identity design." },
+                                { title: "Educational Video Production Nepal", desc: "Creating engaging content for schools, colleges, and training institutions to communicate their vision." }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.15 }}
-                                    className="relative"
+                                    transition={{ delay: i * 0.1 }}
+                                    className="p-8 border border-white/10 rounded-2xl bg-white/5"
                                 >
-                                    <div className="w-4 h-4 bg-primary rounded-full mx-auto mb-8 relative z-10 ring-4 ring-foreground" />
-                                    <span className="text-6xl font-bold text-white/5 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                        {item.step}
-                                    </span>
-                                    <h3 className="text-2xl font-bold relative z-10">{item.title}</h3>
+                                    <h3 className="text-2xl font-bold mb-4 text-primary">{item.title}</h3>
+                                    <p className="text-white/60 leading-relaxed">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 4. CTA SECTION */}
+                {/* 5. CTA SECTION */}
                 <section className="px-6 lg:px-12 py-32 lg:py-48 bg-background">
                     <div className="container mx-auto">
-                        <div className="bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden group">
+                        <div className="bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden group shadow-2xl">
                             {/* Animated background circles */}
                             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                                 <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
@@ -186,10 +198,13 @@ const Services = () => {
 
                             <div className="relative z-10">
                                 <h2 className="text-4xl md:text-7xl font-bold font-display text-primary-foreground mb-12">
-                                    Ready to start?
+                                    Looking for Professional Branding Services Nepal?
                                 </h2>
-                                <Link to="/#contact" className="inline-flex items-center bg-background text-foreground px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">
-                                    Let's Work Together
+                                <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto font-medium">
+                                    Whether you need digital marketing Kathmandu, high-end visuals, or branding services Kathmandu, we are here to help.
+                                </p>
+                                <Link to="/#contact" className="inline-flex items-center bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                                    Let’s Discuss Your Project
                                     <ArrowRight className="ml-2 w-5 h-5" />
                                 </Link>
                             </div>

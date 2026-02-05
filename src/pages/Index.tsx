@@ -14,10 +14,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Digambar Media | Creative Agency & Digital Marketing Nepal</title>
-        <meta name="description" content="Digambar Media is a leading creative agency in Nepal specializing in strategic branding, digital marketing, and professional video production in Kathmandu." />
-        <meta name="keywords" content="digital marketing nepal, branding services nepal, video production nepal, creative agency kathmandu, social media marketing nepal, seo services nepal, digital marketing kathmandu, branding services kathmandu" />
-        <meta property="og:title" content="Digambar Media | Creative Agency & Digital Marketing Nepal" />
+        <title>Full-Service Marketing Agency Nepal | Creative Agency Digambar Media</title>
+        <meta name="description" content="Digambar Media is a premier full-service marketing agency in Nepal. We specialize in digital marketing services Nepal, strategic branding Kathmandu, and professional video production." />
+        <meta name="keywords" content="full-service marketing agency nepal, creative agency nepal, digital marketing services nepal, branding services nepal, video production services nepal, marketing agency kathmandu, digital marketing kathmandu, video production kathmandu, branding services kathmandu, seo nepal" />
+        <meta property="og:title" content="Full-Service Marketing Agency Nepal | Creative Agency Digambar Media" />
         <meta property="og:description" content="Strategic branding, digital marketing, and professional video production services in Kathmandu, Nepal." />
       </Helmet>
       <Navigation />

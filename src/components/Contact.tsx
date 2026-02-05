@@ -9,11 +9,34 @@ const Contact = () => {
     company: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setStatus("loading");
+
+    // Using Formspree for simplified email handling without a backend
+    // Integration logic:
+    try {
+      const response = await fetch("https://formspree.io/f/info.digambar@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,7 +60,7 @@ const Contact = () => {
               Let's build something meaningful together
             </h2>
             <p className="text-lg text-muted-foreground mb-12">
-              Looking for the **best digital marketing agency in Kathmandu** or **professional branding services in Nepal**? Have a project in mind? We'd love to hear about it. Drop us a line and let's explore how we can bring your vision to life.
+              Looking for the best digital marketing agency in Kathmandu or professional branding services in Nepal? Have a project in mind? We'd love to hear about it. Drop us a line and let's explore how we can bring your vision to life.
             </p>
 
             <div className="space-y-6">
@@ -47,8 +70,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email us at</p>
-                  <a href="mailto:officialthedigambar@gmail.com" className="font-medium text-foreground hover:text-primary transition-colors">
-                    officialthedigambar@gmail.com
+                  <a href="mailto:info.digambar@gmail.com" className="font-medium text-foreground hover:text-primary transition-colors">
+                    info.digambar@gmail.com
                   </a>
                 </div>
               </div>
@@ -102,7 +125,7 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="bg-card p-8 lg:p-10 rounded-2xl shadow-card">
+            <form onSubmit={handleSubmit} className="bg-card p-8 lg:p-10 rounded-2xl shadow-card relative overflow-hidden">
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -167,11 +190,46 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary-light transition-colors duration-300"
+                  disabled={status === "loading"}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send className="w-4 h-4" />
+                  {status === "loading" ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : status === "success" ? (
+                    "Message Sent!"
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
+
+                {status === "success" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center text-green-500 font-medium"
+                  >
+                    Thank you! We'll get back to you shortly.
+                  </motion.p>
+                )}
+
+                {status === "error" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center text-red-500 font-medium"
+                  >
+                    Something went wrong. Please try again or email us directly.
+                  </motion.p>
+                )}
               </div>
             </form>
           </motion.div>

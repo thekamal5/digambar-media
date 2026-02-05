@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Approach", href: "/our-approach" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navigation = () => {
@@ -66,12 +66,12 @@ const Navigation = () => {
                 </a>
               )
             ))}
-            <a
-              href={getLinkHref("#contact")}
+            <Link
+              to="/contact"
               className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-primary-light transition-colors duration-200"
             >
               Start a Project
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -115,13 +115,13 @@ const Navigation = () => {
                   </a>
                 )
               ))}
-              <a
-                href={getLinkHref("#contact")}
+              <Link
+                to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-5 py-3 text-center text-sm font-medium bg-primary text-primary-foreground rounded-full"
               >
                 Start a Project
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
