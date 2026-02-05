@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const footerLinks = {
   navigation: [
@@ -11,66 +10,61 @@ const footerLinks = {
   ],
   social: [
     { icon: Facebook, href: "https://www.facebook.com/digambarmedia", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Youtube, href: "#", label: "Youtube" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
   ],
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground py-10 lg:py-12 border-t border-white/5">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
-          <div className="max-w-xs">
-            <Link to="/" className="inline-block mb-4">
-              <img src="/logo.png" alt="Digambar Media" className="h-20 w-auto object-contain brightness-0 invert" />
-            </Link>
-            <p className="text-primary-foreground/50 text-xs leading-relaxed">
-              Strategic branding and digital storytelling for impact-driven brands.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+    <footer className="w-full font-sans">
+      {/* Top Bar - Brand Primary Color (Teal) */}
+      <div className="bg-primary py-4 lg:py-6">
+        <div className="container mx-auto px-6 lg:px-12">
+          <nav className="flex flex-wrap justify-center items-center gap-x-6 lg:gap-x-12 gap-y-3">
             {footerLinks.navigation.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-primary-foreground/60 hover:text-primary transition-colors duration-200"
+                className="text-white font-medium hover:text-white/80 transition-colors duration-200 text-sm md:text-base uppercase tracking-wider"
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
         </div>
+      </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-[10px] uppercase tracking-widest text-primary-foreground/30">
-            © {new Date().getFullYear()} Digambar Media. All rights reserved.
-          </p>
+      {/* Bottom Bar - Dark Teal Background */}
+      <div className="bg-[#123e3e] text-white/80 py-8 lg:py-10">
+        <div className="container mx-auto px-6 lg:px-12 text-center">
+          <div className="max-w-4xl mx-auto space-y-3 mb-8">
+            <p className="text-xs md:text-sm lg:text-base leading-relaxed">
+              Copyright © {new Date().getFullYear()} Digambar Media Pvt. Ltd. All Rights Reserved.
+              <span className="mx-2 hidden md:inline">•</span>
+              <span className="block md:inline">Kathmandu, Nepal</span>
+            </p>
+            <p className="text-[10px] md:text-xs lg:text-sm opacity-60">
+              www.digambarmedia.com is Designed, Developed & Managed by Digambar Media Pvt. Ltd.
+            </p>
+          </div>
 
-          <div className="flex items-center gap-6">
+          {/* Social Icons - Boxed Style per Image */}
+          <div className="flex justify-center items-center gap-3 md:gap-4">
             {footerLinks.social.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-foreground/40 hover:text-primary transition-colors duration-200"
+                className="w-10 h-10 md:w-11 md:h-11 border border-white/20 rounded flex items-center justify-center hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 aria-label={item.label}
               >
-                <item.icon size={18} />
+                <item.icon className="w-5 h-5 md:w-6 md:h-6" />
               </a>
             ))}
-          </div>
-
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-[10px] uppercase tracking-widest text-primary-foreground/30 hover:text-primary transition-colors">
-              Privacy
-            </a>
-            <a href="#" className="text-[10px] uppercase tracking-widest text-primary-foreground/30 hover:text-primary transition-colors">
-              Terms
-            </a>
           </div>
         </div>
       </div>
