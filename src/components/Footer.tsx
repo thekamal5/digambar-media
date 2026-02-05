@@ -44,7 +44,7 @@ const Footer = () => {
             <p className="text-xs md:text-sm lg:text-base leading-relaxed">
               Copyright © {new Date().getFullYear()} Digambar Media Pvt. Ltd. All Rights Reserved.
               <span className="mx-2 hidden md:inline">•</span>
-              <span className="block md:inline">Kathmandu, Nepal</span>
+              <span className="block md:inline">Nepal</span>
             </p>
             <p className="text-[10px] md:text-xs lg:text-sm opacity-60">
               www.digambarmedia.com is Designed, Developed & Managed by Digambar Media Pvt. Ltd.
