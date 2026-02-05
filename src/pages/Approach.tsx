@@ -11,22 +11,22 @@ const processSteps = [
     {
         number: "01",
         title: "Research & Insight",
-        description: "We begin by understanding the brand, audience, context, and challenges. Through branding research and listening, we uncover insights that shape every strategic decision."
+        description: "We begin by understanding the brand, audience, context, and challenges. Through **branding research in Nepal** and listening, we uncover insights that shape every strategic decision."
     },
     {
         number: "02",
         title: "Strategy & Direction",
-        description: "Based on insights, we develop a clear strategy that defines positioning, messaging, tone, and direction. This brand strategy foundation guides social media marketing, campaigns, and content."
+        description: "Based on insights, we develop a clear strategy that defines positioning, messaging, tone, and direction. This **brand strategy foundation** guides social media marketing Nepal, creative campaigns, and content."
     },
     {
         number: "03",
         title: "Creativity & Production",
-        description: "We translate strategy into creative outcomes—designing brand identities, crafting campaigns, producing videos, and developing documentary narratives that connect emotionally and visually."
+        description: "We translate strategy into creative outcomes—designing brand identities, crafting campaigns, and implementing a professional **video production workflow in Nepal** that connects emotionally."
     },
     {
         number: "04",
         title: "Delivery & Impact",
-        description: "We execute with care and measure impact wherever possible. Our focus is on clarity, consistency, and meaningful engagement across platforms and audiences."
+        description: "We execute with care and measure impact wherever possible. Our focus is on clarity, consistency, and meaningful engagement for brands in the **Kathmandu market** and beyond."
     }
 ];
 
@@ -42,11 +42,11 @@ const ApproachPage = () => {
     return (
         <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 font-sans">
             <Helmet>
-                <title>Our Approach | Strategic Branding & Storytelling Process – Digambar Media</title>
-                <meta name="description" content="Discover Digambar Media’s approach to strategic branding, social media marketing, creative campaigns, video production, and documentary storytelling. Our process combines research, strategy, creativity, and impact." />
-                <meta name="keywords" content="strategic branding process, branding agency approach, digital marketing strategy process, social media marketing strategy, creative campaign process, video production workflow, documentary storytelling approach" />
-                <meta property="og:title" content="Our Approach | Strategic Branding & Storytelling Process – Digambar Media" />
-                <meta property="og:description" content="Discover Digambar Media’s approach to strategic branding, social media marketing, creative campaigns, video production, and documentary storytelling." />
+                <title>Our Approach | Strategic Branding & Digital Marketing Process Nepal</title>
+                <meta name="description" content="Discover Digambar Media’s approach to strategic branding and digital marketing in Nepal. Our process blends research, strategy, and creative storytelling in Kathmandu for maximum impact." />
+                <meta name="keywords" content="strategic branding process nepal, digital marketing strategy kathmandu, branding agency approach nepal, social media marketing strategy nepal, creative campaign process, video production workflow nepal" />
+                <meta property="og:title" content="Our Approach | Strategic Branding & Marketing Process Nepal" />
+                <meta property="og:description" content="Discover our strategy-led approach to branding, social media, and video production in Nepal." />
             </Helmet>
 
             <Navigation />

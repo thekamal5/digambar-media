@@ -33,11 +33,11 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 font-sans">
             <Helmet>
-                <title>About Digambar Media | Strategic Branding & Storytelling Agency</title>
-                <meta name="description" content="Learn about Digambar Media, a strategic branding and social media marketing agency specializing in creative campaigns, video production, and documentary storytelling driven by insight and impact." />
-                <meta name="keywords" content="about branding agency, strategic branding company, social media marketing agency, creative storytelling agency, video production company, documentary filmmaking agency, digital branding experts" />
-                <meta property="og:title" content="About Digambar Media | Strategic Branding & Storytelling Agency" />
-                <meta property="og:description" content="Learn about Digambar Media, a strategic branding and social media marketing agency specializing in creative campaigns, video production, and documentary storytelling driven by insight and impact." />
+                <title>About Digambar Media | Strategic Branding & Digital Marketing Nepal</title>
+                <meta name="description" content="Learn about Digambar Media, a strategic branding and digital marketing agency in Kathmandu. We specialize in creative storytelling, video production, and SEO services in Nepal." />
+                <meta name="keywords" content="about branding agency, digital marketing agency nepal, creative storytelling agency kathmandu, video production company nepal, seo experts nepal, branding services nepal, marketing agency kathmandu" />
+                <meta property="og:title" content="About Digambar Media | Strategic Branding & Digital Marketing Nepal" />
+                <meta property="og:description" content="Learn about Digambar Media, a strategic branding and digital marketing agency in Kathmandu specializing in impact-driven storytelling." />
             </Helmet>
 
             <Navigation />
@@ -87,10 +87,10 @@ const AboutPage = () => {
                                 className="space-y-6 text-xl leading-relaxed text-foreground/80"
                             >
                                 <p>
-                                    Digambar Media is a strategic branding and social media marketing agency working at the intersection of strategy, creativity, and storytelling. We collaborate with organizations, initiatives, and brands to shape meaningful communication across digital platforms.
+                                    Digambar Media is a **strategic branding and digital marketing agency in Nepal** working at the intersection of strategy, creativity, and storytelling. We collaborate with organizations, initiatives, and brands to shape meaningful communication across digital platforms in Kathmandu and beyond.
                                 </p>
                                 <p>
-                                    Our work spans brand strategy and identity, social media marketing, creative campaigns, video production, and documentary storytelling—designed to connect with people and create lasting impact.
+                                    As a full-service marketing agency in Nepal, our work spans brand strategy and identity, social media marketing Kathmandu, creative campaigns, video production services Nepal, and documentary storytelling—designed to connect with people and create lasting impact.
                                 </p>
                             </motion.div>
                         </div>
@@ -193,7 +193,7 @@ const AboutPage = () => {
                             >
                                 <h2 className="text-4xl md:text-5xl font-bold font-display mb-8">What Makes Us Different</h2>
                                 <p className="text-xl leading-relaxed text-foreground/80">
-                                    We are not just a service provider—we are a thinking partner. Our work is rooted in strategy, guided by creativity, and strengthened by storytelling. By combining branding expertise with digital marketing and visual narratives, we help brands communicate with depth and authenticity.
+                                    We are not just a service provider—we are a thinking partner. Our work is rooted in strategy, guided by creativity, and strengthened by storytelling. By combining **branding services Nepal** with digital marketing expertise and visual narratives, we help brands communicate with depth and authenticity in the competitive Kathmandu market.
                                 </p>
                             </motion.div>
                             <div className="order-1 lg:order-2 flex justify-center">

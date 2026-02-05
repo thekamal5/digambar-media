@@ -27,7 +27,7 @@ const Hero = () => {
             className="mb-6"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary bg-primary/10 rounded-full">
-              Strategic Branding & Visual Storytelling
+              Strategic Branding & Digital Marketing Nepal
             </span>
           </motion.div>
 
@@ -37,10 +37,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-foreground mb-8"
           >
-            We Build Brands That{" "}
-            <span className="text-primary">Speak</span>,{" "}
-            <span className="text-primary">Move</span>, and{" "}
-            <span className="text-primary">Matter</span>.
+            A Thinking Partner for <br />
+            <span className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic block mt-2">Digital Marketing & Branding in Nepal</span>.
           </motion.h1>
 
           <motion.p
@@ -49,7 +47,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            Strategic branding, social media, and visual storytelling for impact-driven brands that want to leave a lasting impression.
+            Specializing in strategic branding, digital marketing Kathmandu, and cinematic video production Nepal for impact-driven brands.
           </motion.p>
 
           <motion.div

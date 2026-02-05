@@ -21,11 +21,11 @@ const Services = () => {
     return (
         <div ref={containerRef} className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground font-sans">
             <Helmet>
-                <title>Our Services | Digambar Media - Strategic Branding & Digital Marketing</title>
-                <meta name="description" content="Comprehensive creative services including Brand Strategy, Social Media Marketing, Campaign Creation, and Video Production. We build brands that resonate." />
-                <meta name="keywords" content="branding services, digital marketing agency, video production, social media strategy, creative campaigns" />
-                <meta property="og:title" content="Our Services | Digambar Media" />
-                <meta property="og:description" content="Comprehensive creative services designed to create clarity, connection, and impact." />
+                <title>Our Services | Branding, Digital Marketing & Video Production Nepal</title>
+                <meta name="description" content="Comprehensive creative services in Nepal including Strategic Branding, Digital Marketing Kathmandu, and Professional Video Production. We build brands that resonate and matter." />
+                <meta name="keywords" content="branding services nepal, digital marketing agency kathmandu, video production services nepal, social media strategy nepal, creative agency nepal, content creation nepal" />
+                <meta property="og:title" content="Our Services | Digambar Media - Marketing & Branding Nepal" />
+                <meta property="og:description" content="Comprehensive creative services designed to create clarity, connection, and impact for brands in Nepal." />
             </Helmet>
 
             <Navigation />
@@ -69,7 +69,7 @@ const Services = () => {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="text-xl md:text-3xl text-muted-foreground max-w-4xl leading-relaxed"
                         >
-                            Strategic branding, social media marketing, creative campaigns, and storytelling—designed to create clarity, connection, and impact.
+                            Strategic branding, **digital marketing Kathmandu**, creative campaigns, and **video production services Nepal**—designed to create clarity, connection, and impact.
                         </motion.p>
                     </div>
                 </motion.section>

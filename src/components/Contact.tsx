@@ -34,10 +34,10 @@ const Contact = () => {
               Get In Touch
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Let's create something extraordinary together
+              Let's build something meaningful together
             </h2>
             <p className="text-lg text-muted-foreground mb-12">
-              Have a project in mind? We'd love to hear about it. Drop us a line and let's explore how we can bring your vision to life.
+              Looking for the **best digital marketing agency in Kathmandu** or **professional branding services in Nepal**? Have a project in mind? We'd love to hear about it. Drop us a line and let's explore how we can bring your vision to life.
             </p>
 
             <div className="space-y-6">

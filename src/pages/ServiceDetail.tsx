@@ -25,11 +25,11 @@ const ServiceDetail = () => {
     return (
         <div ref={containerRef} className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground font-sans">
             <Helmet>
-                <title>{service.title} | Digambar Media - Creative Agency</title>
-                <meta name="description" content={service.hero.subtext} />
-                <meta property="og:title" content={`${service.title} | Digambar Media`} />
-                <meta property="og:description" content={service.hero.subtext} />
-                <meta name="keywords" content={`branding, ${service.title.toLowerCase()}, creative agency, digital marketing, video production`} />
+                <title>{service.metaTitle || `${service.title} | Digambar Media - Creative Agency Nepal`}</title>
+                <meta name="description" content={service.metaDescription || service.hero.subtext} />
+                <meta property="og:title" content={service.metaTitle || `${service.title} | Digambar Media`} />
+                <meta property="og:description" content={service.metaDescription || service.hero.subtext} />
+                <meta name="keywords" content={service.metaKeywords || `branding, ${service.title.toLowerCase()}, creative agency nepal, digital marketing nepal, video production nepal`} />
             </Helmet>
 
             <Navigation />
