@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Approach from "./pages/Approach";
+import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
 
@@ -41,6 +42,7 @@ const AppContent = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/our-approach" element={<Approach />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
