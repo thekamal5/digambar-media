@@ -27,10 +27,8 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <a href="#" className="inline-block mb-6">
-              <span className="text-xl font-bold">
-                Digambar<span className="text-primary">Media</span>
-              </span>
+            <a href="#" className="inline-block mb-8">
+              <img src="/logo.png" alt="Digambar Media" className="h-24 w-auto object-contain brightness-0 invert" />
             </a>
             <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
               Strategic branding, social media, and visual storytelling for impact-driven brands.

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/services" },
   { label: "Approach", href: "#approach" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -13,6 +14,7 @@ const navLinks = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,38 +24,50 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getLinkHref = (href: string) => {
+    if (href.startsWith("/")) return href; // Internal page link
+    if (location.pathname === "/" && href.startsWith("#")) return href; // Ancestor link on home
+    return `/${href}`; // Ancestor link from other pages
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+        }`}
     >
       <nav className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              Digambar<span className="text-primary">Media</span>
-              {/* <img src="http" */}
-            </span>
-          </a>
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.png" alt="Digambar Media" className="h-20 w-auto object-contain" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {link.label}
-              </a>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={getLinkHref(link.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
             <a
-              href="#contact"
+              href={getLinkHref("#contact")}
               className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-primary-light transition-colors duration-200"
             >
               Start a Project
@@ -81,17 +95,28 @@ const Navigation = () => {
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={getLinkHref(link.href)}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
               <a
-                href="#contact"
+                href={getLinkHref("#contact")}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-5 py-3 text-center text-sm font-medium bg-primary text-primary-foreground rounded-full"
               >
