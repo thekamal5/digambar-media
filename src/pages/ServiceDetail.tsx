@@ -16,12 +16,11 @@ const ServiceDetail = () => {
         target: containerRef,
         offset: ["start start", "end end"]
     });
+    const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     if (!service) {
         return <Navigate to="/services" replace />;
     }
-
-    const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     return (
         <div ref={containerRef} className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground font-sans">
