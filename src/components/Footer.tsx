@@ -1,107 +1,75 @@
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
-  services: [
-    { label: "Brand Strategy", href: "#services" },
-    { label: "Social Media", href: "#services" },
-    { label: "Video Production", href: "#services" },
-    { label: "Documentaries", href: "#services" },
-  ],
-  company: [
-    { label: "About", href: "#about" },
+  navigation: [
     { label: "Work", href: "#work" },
+    { label: "Services", href: "/services" },
     { label: "Approach", href: "/our-approach" },
+    { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],
   social: [
-    { label: "Facebook", href: "https://www.facebook.com/digambarmedia" },
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Twitter", href: "#" },
+    { icon: Facebook, href: "https://www.facebook.com/digambarmedia", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "Twitter" },
   ],
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground py-16 lg:py-20">
+    <footer className="bg-foreground text-primary-foreground py-10 lg:py-12 border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="lg:col-span-1">
-            <a href="#" className="inline-block mb-8">
-              <img src="/logo.png" alt="Digambar Media" className="h-24 w-auto object-contain brightness-0 invert" />
-            </a>
-            <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
-              Strategic branding, social media, and visual storytelling for impact-driven brands.
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
+          <div className="max-w-xs">
+            <Link to="/" className="inline-block mb-4">
+              <img src="/logo.png" alt="Digambar Media" className="h-20 w-auto object-contain brightness-0 invert" />
+            </Link>
+            <p className="text-primary-foreground/50 text-xs leading-relaxed">
+              Strategic branding and digital storytelling for impact-driven brands.
             </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-light transition-colors"
-            >
-              Start a Project
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-6">Services</h4>
-            <ul className="space-y-4">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-6">Company</h4>
-            <ul className="space-y-4">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-6">Follow Us</h4>
-            <ul className="space-y-4">
-              {footerLinks.social.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/60 hover:text-primary transition-colors flex items-center gap-1"
-                  >
-                    {link.label}
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+            {footerLinks.navigation.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm text-primary-foreground/60 hover:text-primary transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-primary-foreground/40">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] uppercase tracking-widest text-primary-foreground/30">
             © {new Date().getFullYear()} Digambar Media. All rights reserved.
           </p>
+
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors">
-              Privacy Policy
+            {footerLinks.social.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/40 hover:text-primary transition-colors duration-200"
+                aria-label={item.label}
+              >
+                <item.icon size={18} />
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-[10px] uppercase tracking-widest text-primary-foreground/30 hover:text-primary transition-colors">
+              Privacy
             </a>
-            <a href="#" className="text-sm text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors">
-              Terms of Service
+            <a href="#" className="text-[10px] uppercase tracking-widest text-primary-foreground/30 hover:text-primary transition-colors">
+              Terms
             </a>
           </div>
         </div>
