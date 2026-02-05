@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Rocket, Share2, Lightbulb, Video, Film } from "lucide-react";
+import { Rocket, Share2, Lightbulb, Video, Film, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -86,9 +86,12 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Strategic services for brands that aim higher
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-8">
             We combine strategy, creativity, and production expertise to help brands tell their stories with impact.
           </p>
+          <Link to="/services" className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all">
+            View All Services <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

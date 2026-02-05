@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -119,9 +121,12 @@ const Approach = () => {
               </motion.svg>
             </span> results.
           </h2>
-          <p className="text-lg text-muted-foreground lg:text-xl">
+          <p className="text-lg text-muted-foreground lg:text-xl mb-8">
             We don't just follow a template. We follow curiosity, strategy, and human connection to craft work that matters.
           </p>
+          <Link to="/our-approach" className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all">
+            Discover Our Process <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
         </motion.div>
 
         <div className="relative grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">

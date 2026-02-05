@@ -10,7 +10,7 @@ const footerLinks = {
   company: [
     { label: "About", href: "#about" },
     { label: "Work", href: "#work" },
-    { label: "Approach", href: "#approach" },
+    { label: "Approach", href: "/our-approach" },
     { label: "Contact", href: "#contact" },
   ],
   social: [
