@@ -284,7 +284,7 @@ const AboutPage = () => {
                         <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto">
                             If you’re looking for a best digital marketing agency in Kathmandu and a storytelling partner that values strategy, we’d love to work together.
                         </p>
-                        <Link to="/#contact" className="inline-flex items-center px-10 py-5 rounded-full bg-white text-primary font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                        <Link to="/contact" className="inline-flex items-center px-10 py-5 rounded-full bg-white text-primary font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
                             Get in Touch Today
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>

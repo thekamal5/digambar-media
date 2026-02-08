@@ -1,12 +1,13 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   navigation: [
-    { label: "Work", href: "#work" },
+    { label: "Work", href: "/#work" },
     { label: "Services", href: "/services" },
     { label: "Approach", href: "/our-approach" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ],
   social: [
     { icon: Facebook, href: "https://www.facebook.com/digambarmedia", label: "Facebook" },
@@ -25,13 +26,13 @@ const Footer = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <nav className="flex flex-wrap justify-center items-center gap-x-6 lg:gap-x-12 gap-y-3">
             {footerLinks.navigation.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-white font-medium hover:text-white/80 transition-colors duration-200 text-sm md:text-base uppercase tracking-wider"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

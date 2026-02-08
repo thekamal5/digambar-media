@@ -97,7 +97,7 @@ const Services = () => {
                 {/* 3. SERVICES LIST - Interactive Cards */}
                 <section className="px-6 lg:px-12 py-20 lg:py-32 relative z-10 bg-background/50 backdrop-blur-sm">
                     <div className="container mx-auto">
-                        <div className="grid gap-8">
+                        <div className="grid gap-12">
                             {services.map((service, index) => (
                                 <Link
                                     key={service.id}
@@ -108,40 +108,56 @@ const Services = () => {
                                         initial={{ opacity: 0, y: 50 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, margin: "-100px" }}
-                                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                                        className="relative bg-card hover:bg-muted/40 border border-border/50 rounded-[2.5rem] p-8 md:p-16 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20 overflow-hidden"
+                                        transition={{ duration: 0.8, delay: index * 0.1 }}
+                                        className="relative bg-card hover:bg-secondary/30 border border-border/50 rounded-[3rem] p-10 md:p-20 transition-all duration-700 hover:shadow-[0_40px_80px_-15px_rgba(4,132,132,0.1)] hover:border-primary/30 overflow-hidden"
                                     >
-                                        <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                                        {/* Background Decor */}
+                                        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none skew-x-12 translate-x-1/2 group-hover:translate-x-[40%] transition-transform duration-1000" />
+
+                                        <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
                                             <div>
-                                                <div className="flex items-center gap-6 mb-8">
-                                                    <span className="text-6xl font-display font-bold text-muted-foreground/20 group-hover:text-primary/20 transition-colors">
+                                                <div className="flex items-center gap-8 mb-10">
+                                                    <span className="text-7xl md:text-8xl font-display font-bold text-muted-foreground/10 group-hover:text-primary transition-colors duration-500">
                                                         0{index + 1}
                                                     </span>
-                                                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                                                        <service.icon className="w-8 h-8" />
+                                                    <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 rotate-3 group-hover:rotate-12 group-hover:scale-110">
+                                                        <service.icon className="w-10 h-10" />
                                                     </div>
                                                 </div>
 
-                                                <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 group-hover:text-primary transition-colors">
+                                                <h2 className="text-4xl md:text-6xl font-bold font-display mb-8 group-hover:translate-x-2 transition-transform duration-500">
                                                     {service.title}
                                                 </h2>
-                                                <p className="text-xl text-muted-foreground leading-relaxed max-w-xl group-hover:text-foreground transition-colors">
+                                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl group-hover:text-foreground transition-colors duration-500">
                                                     {service.shortDescription}
                                                 </p>
 
-                                                <div className="mt-12 inline-flex items-center text-lg font-bold text-primary">
-                                                    Explore This Service in Nepal
-                                                    <span className="ml-2 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:translate-x-2 transition-transform">
-                                                        <ArrowUpRight className="w-4 h-4" />
+                                                <div className="mt-12 inline-flex items-center gap-4 text-xl font-bold text-primary group/btn">
+                                                    <span className="border-b-2 border-primary/30 group-hover/btn:border-primary transition-all">
+                                                        View Details
                                                     </span>
+                                                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover/btn:translate-x-3 transition-transform">
+                                                        <ArrowUpRight className="w-5 h-5" />
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             {/* Abstract Visual per card */}
-                                            <div className="hidden lg:flex justify-end items-center">
-                                                <div className="relative w-64 h-64 rounded-full border border-primary/10 flex items-center justify-center group-hover:border-primary/30 transition-colors">
-                                                    <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                    <service.icon className="w-32 h-32 text-muted-foreground/10 group-hover:text-primary/10 transition-colors duration-500" />
+                                            <div className="hidden lg:flex justify-center items-center">
+                                                <div className="relative w-80 h-80">
+                                                    <motion.div
+                                                        animate={{ rotate: 360 }}
+                                                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                                                        className="absolute inset-0 border-[2px] border-dashed border-primary/20 rounded-[4rem]"
+                                                    />
+                                                    <motion.div
+                                                        animate={{ rotate: -360 }}
+                                                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                                        className="absolute inset-8 border border-primary/10 rounded-[3rem]"
+                                                    />
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        <service.icon className="w-32 h-32 text-primary/5 group-hover:text-primary/20 group-hover:scale-125 transition-all duration-700" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,7 +219,7 @@ const Services = () => {
                                 <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto font-medium">
                                     Whether you need digital marketing Kathmandu, high-end visuals, or branding services Kathmandu, we are here to help.
                                 </p>
-                                <Link to="/#contact" className="inline-flex items-center bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                                <Link to="/contact" className="inline-flex items-center bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl">
                                     Let’s Discuss Your Project
                                     <ArrowRight className="ml-2 w-5 h-5" />
                                 </Link>

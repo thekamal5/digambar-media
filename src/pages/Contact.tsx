@@ -104,7 +104,7 @@ const ContactPage = () => {
                                     We’re always looking for talented individuals to join our growing team. Send your portfolio and resume.
                                 </p>
                                 <a href="mailto:info.digambar@gmail.com" className="block text-xl font-medium hover:text-primary transition-colors">
-                                    work@digambarmedia.com
+                                    info.digambar@gmail.com
                                 </a>
                             </motion.div>
                         </div>

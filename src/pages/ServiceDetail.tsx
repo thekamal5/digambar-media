@@ -224,7 +224,7 @@ const ServiceDetail = () => {
                                     {service.cta}
                                 </h3>
                                 <Link
-                                    to="/#contact"
+                                    to="/contact"
                                     className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary-dark hover:gap-6 transition-all relative z-10"
                                 >
                                     Start Project

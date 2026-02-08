@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -47,13 +48,13 @@ const Work = () => {
               Stories that inspire action
             </h2>
           </div>
-          <a
-            href="#contact"
+          <Link
+            to="/services"
             className="text-sm font-semibold text-primary flex items-center gap-2 hover:gap-3 transition-all"
           >
             View All Projects
             <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">

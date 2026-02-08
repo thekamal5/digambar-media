@@ -156,7 +156,7 @@ const ApproachPage = () => {
                                                 {step.description}
                                             </p>
                                         </div>
-                                        <div className="flex-1 hidden md:block" /> {/ Spacer for layout balance */}
+                                        <div className="flex-1 hidden md:block" /> {/* Spacer for layout balance */}
                                     </motion.div>
                                 ))}
                             </div>
@@ -218,7 +218,7 @@ const ApproachPage = () => {
                         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
                             If you’re looking for a partner in marketing and video production Nepal that values deep strategy and high-impact storytelling, let's connect.
                         </p>
-                        <Link to="/#contact" className="inline-flex items-center px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary-dark transition-all hover:scale-105 shadow-xl shadow-primary/20">
+                        <Link to="/contact" className="inline-flex items-center px-10 py-5 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:bg-primary-dark transition-all hover:scale-105 shadow-xl shadow-primary/20">
                             Start Your Strategy Session
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Link>
