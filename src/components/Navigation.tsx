@@ -44,7 +44,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group relative z-[60]">
             <img
-              src="/logo.png"
+              src="logo.png"
               alt="Digambar Media"
               className={`h-12 md:h-16 lg:h-20 w-auto object-contain transition-all duration-500 ${isScrolled ? "scale-90" : "scale-100"}`}
             />

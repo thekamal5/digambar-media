@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img
-          src="/hero-banner.png"
+          src="hero-banner.png"
           alt="Digambar Media Hero Banner"
           className="w-full h-full object-cover"
         />

@@ -27,7 +27,7 @@ const Loader = () => {
                     className="relative z-10"
                 >
                     <img
-                        src="/loader-logo.png"
+                        src="loader-logo.png"
                         alt="Loading..."
                         className="w-32 h-32 md:w-48 md:h-48 object-contain"
                     />
