@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="about" className="section-padding bg-background overflow-hidden">
+      <div className="container mx-auto px-5 md:px-12">
         {/* Artistic header */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -28,7 +28,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]"
               >
                 We are{" "}
                 <span className="relative inline-block">
@@ -125,7 +125,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card p-8 rounded-3xl shadow-card"
+              className="bg-card p-6 sm:p-8 rounded-3xl shadow-card"
             >
               <div className="flex items-start gap-4 mb-4">
                 <motion.div

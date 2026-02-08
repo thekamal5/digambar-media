@@ -34,9 +34,9 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform ${isScrolled
         ? "py-3 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
-        : "py-6 bg-transparent"
+        : "py-4 md:py-6 bg-transparent"
         }`}
     >
       <nav className="container mx-auto px-6 lg:px-12">
@@ -46,7 +46,7 @@ const Navigation = () => {
             <img
               src="/logo.png"
               alt="Digambar Media"
-              className={`h-16 lg:h-20 w-auto object-contain transition-all duration-500 ${isScrolled ? "scale-90" : "scale-100"}`}
+              className={`h-12 md:h-16 lg:h-20 w-auto object-contain transition-all duration-500 ${isScrolled ? "scale-90" : "scale-100"}`}
             />
           </Link>
 
@@ -60,8 +60,8 @@ const Navigation = () => {
                     key={link.label}
                     to={link.href}
                     className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${isActive
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                       }`}
                   >
                     {link.label}
@@ -111,7 +111,7 @@ const Navigation = () => {
                   <Link
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-4xl font-bold font-display hover:text-primary transition-colors flex items-center justify-between group"
+                    className="text-3xl sm:text-4xl font-bold font-display hover:text-primary transition-colors flex items-center justify-between group py-2"
                   >
                     {link.label}
                     <ArrowRight className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-primary" />

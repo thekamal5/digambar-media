@@ -103,19 +103,41 @@
 @layer base {
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight;
+  }
+
+  /* Optimized tap targets for mobile */
+  button,
+  a {
+    @apply touch-manipulation;
+  }
+
+  /* Fix for iOS input zoom */
+  input,
+  textarea,
+  select {
+    @apply text-base md:text-sm;
   }
 }
 
@@ -143,5 +165,23 @@
 
   .shadow-hover {
     box-shadow: var(--shadow-hover);
+  }
+
+  /* Performance optimization for animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* Mobile-first spacing helpers */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-5 md:px-12 lg:px-16;
   }
 }

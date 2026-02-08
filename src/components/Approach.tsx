@@ -76,8 +76,8 @@ const SketchedArrow = ({ className = "" }) => (
 
 const Approach = () => {
   return (
-    <section id="approach" className="py-24 lg:py-32 bg-secondary/20 text-foreground overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="approach" className="section-padding bg-secondary/20 text-foreground overflow-hidden">
+      <div className="container mx-auto px-5 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ const Approach = () => {
               viewport={{ once: true }}
             />
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-display">
             A human process for <span className="relative inline-block">
               real
               <motion.svg className="absolute w-full h-3 -bottom-1 left-0 text-primary" viewBox="0 0 100 10" preserveAspectRatio="none">

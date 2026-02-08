@@ -55,7 +55,7 @@ const Services = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.1 }}
-                            className="text-6xl md:text-8xl lg:text-9xl font-bold font-display tracking-tighter leading-[0.9] mb-12"
+                            className="text-5xl md:text-8xl lg:text-9xl font-bold font-display tracking-tighter leading-[0.9] mb-8 md:mb-12"
                         >
                             Impact-Driven <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
@@ -67,7 +67,7 @@ const Services = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="text-xl md:text-3xl text-muted-foreground max-w-5xl leading-relaxed"
+                            className="text-lg md:text-3xl text-muted-foreground max-w-5xl leading-relaxed"
                         >
                             We offer professional branding services Nepal, digital marketing services Nepal, and video production services Nepal—tailored for the unique needs of the Kathmandu market.
                         </motion.p>
@@ -109,7 +109,7 @@ const Services = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, margin: "-100px" }}
                                         transition={{ duration: 0.8, delay: index * 0.1 }}
-                                        className="relative bg-card hover:bg-secondary/30 border border-border/50 rounded-[3rem] p-10 md:p-20 transition-all duration-700 hover:shadow-[0_40px_80px_-15px_rgba(4,132,132,0.1)] hover:border-primary/30 overflow-hidden"
+                                        className="relative bg-card hover:bg-secondary/30 border border-border/50 rounded-[2.5rem] md:rounded-[3rem] p-6 sm:p-10 md:p-20 transition-all duration-700 hover:shadow-[0_40px_80px_-15px_rgba(4,132,132,0.1)] hover:border-primary/30 overflow-hidden"
                                     >
                                         {/* Background Decor */}
                                         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none skew-x-12 translate-x-1/2 group-hover:translate-x-[40%] transition-transform duration-1000" />
@@ -125,10 +125,10 @@ const Services = () => {
                                                     </div>
                                                 </div>
 
-                                                <h2 className="text-4xl md:text-6xl font-bold font-display mb-8 group-hover:translate-x-2 transition-transform duration-500">
+                                                <h2 className="text-3xl md:text-6xl font-bold font-display mb-6 md:mb-8 group-hover:translate-x-2 transition-transform duration-500">
                                                     {service.title}
                                                 </h2>
-                                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl group-hover:text-foreground transition-colors duration-500">
+                                                <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed max-w-xl group-hover:text-foreground transition-colors duration-500">
                                                     {service.shortDescription}
                                                 </p>
 

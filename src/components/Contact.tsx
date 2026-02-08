@@ -44,8 +44,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="contact" className="section-padding bg-background">
+      <div className="container mx-auto px-5 md:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -125,9 +125,9 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="bg-card p-8 lg:p-10 rounded-2xl shadow-card relative overflow-hidden">
+            <form onSubmit={handleSubmit} className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl shadow-card relative overflow-hidden">
               <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Your Name
@@ -191,7 +191,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 md:py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base md:text-lg"
                 >
                   {status === "loading" ? (
                     <span className="flex items-center gap-2">
