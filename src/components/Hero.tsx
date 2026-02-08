@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            A premier marketing agency in Kathmandu, helping organizations communicate with clarity, creativity, and purpose through digital strategy and high-impact content.
+            A premier marketing agency in Nepal, helping organizations communicate with clarity, creativity, and purpose through digital strategy and high-impact content.
           </motion.p>
 
           <motion.div
