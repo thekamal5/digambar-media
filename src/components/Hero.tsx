@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import AnimatedHomeHeroBackground from "./AnimatedHomeHeroBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Elements */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <img
-          src="hero-banner.png"
-          alt="Digambar Media Hero Banner"
-          className="w-full h-full object-cover"
-        />
+        <AnimatedHomeHeroBackground />
         {/* Animated Overlay Blobs for Depth */}
         <motion.div
           animate={{

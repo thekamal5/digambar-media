@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useRef } from "react";
+import AnimatedApproachHero from "@/components/AnimatedApproachHero";
 
 const processSteps = [
     {
@@ -53,21 +54,60 @@ const ApproachPage = () => {
 
             <main>
                 {/* 1. HERO SECTION */}
-                <section className="relative min-h-[70vh] flex flex-col justify-center px-6 lg:px-12 pt-32 pb-20 overflow-hidden">
+                <section className="relative min-h-[80vh] flex flex-col justify-center px-6 lg:px-12 pt-20 pb-12 overflow-hidden">
                     <div className="container mx-auto relative z-10">
+                        <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-12 items-center">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold font-display tracking-tight mb-8 leading-[0.9]">
+                                    Our <br />
+                                    <span className="text-primary italic">Approach</span>
+                                </h1>
+                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                                    Our work is guided by a clear, thoughtful digital strategy Nepal that blends research, creativity, and storytelling—helping brands communicate with purpose and impact.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+                                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                transition={{ duration: 1, delay: 0.4 }}
+                                className="hidden lg:block relative"
+                            >
+                                <div className="absolute -inset-10 bg-primary/5 rounded-full blur-[100px] -z-10" />
+                                <div className="p-8 bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl shadow-2xl">
+                                    <p className="text-sm font-semibold text-primary mb-4 flex items-center gap-2">
+                                        <div className="w-2 h-2 bg-primary rounded-full animate-ping" />
+                                        Visual Storytelling Process
+                                    </p>
+                                    <h3 className="text-2xl font-bold mb-4">Crafting Connection</h3>
+                                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                                        We bridge the gap between abstract strategy and emotional visual narrative through a highly refined technical workflow.
+                                    </p>
+                                    <div className="flex gap-4">
+                                        <div className="flex-1 bg-secondary/50 p-4 rounded-xl text-center">
+                                            <div className="text-2xl font-bold text-primary">100%</div>
+                                            <div className="text-[10px] uppercase font-bold opacity-60">Custom Strategy</div>
+                                        </div>
+                                        <div className="flex-1 bg-secondary/50 p-4 rounded-xl text-center">
+                                            <div className="text-2xl font-bold text-primary">HD</div>
+                                            <div className="text-[10px] uppercase font-bold opacity-60">Production</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="max-w-4xl"
+                            transition={{ duration: 1, delay: 0.7 }}
+                            className="mt-16 md:mt-24"
                         >
-                            <h1 className="text-6xl md:text-8xl font-bold font-display tracking-tight mb-8">
-                                Our <br />
-                                <span className="text-primary italic">Approach</span>
-                            </h1>
-                            <p className="text-xl md:text-3xl text-muted-foreground leading-relaxed max-w-3xl">
-                                Our work is guided by a clear, thoughtful digital strategy Nepal that blends research, creativity, and storytelling—helping brands communicate with purpose and impact.
-                            </p>
+                            <AnimatedApproachHero />
                         </motion.div>
                     </div>
 

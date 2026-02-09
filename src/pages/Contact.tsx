@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/Contact";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import AnimatedContactGraphic from "@/components/AnimatedContactGraphic";
 
 const ContactPage = () => {
     return (
@@ -16,38 +17,49 @@ const ContactPage = () => {
 
             <Navigation />
 
-            <main className="pt-32">
+            <main className="pt-24 lg:pt-32">
                 {/* HERO SECTION */}
-                <section className="px-6 lg:px-12 py-20 lg:py-32 overflow-hidden relative">
+                <section className="px-6 lg:px-12 py-12 lg:py-24 overflow-hidden relative">
                     <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
 
                     <div className="container mx-auto">
-                        <div className="max-w-4xl">
-                            <motion.span
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6 }}
-                                className="inline-block text-sm font-bold tracking-widest text-primary uppercase mb-6"
+                        <div className="grid lg:grid-cols-[1fr,1fr] gap-12 items-center">
+                            <div className="max-w-4xl">
+                                <motion.span
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6 }}
+                                    className="inline-block text-sm font-bold tracking-widest text-primary uppercase mb-6"
+                                >
+                                    Contact Us
+                                </motion.span>
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.1 }}
+                                    className="text-6xl md:text-7xl lg:text-9xl font-bold font-display tracking-tight leading-[0.9] mb-8"
+                                >
+                                    Let’s start <br />
+                                    <span className="text-primary italic">something.</span>
+                                </motion.h1>
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.3 }}
+                                    className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
+                                >
+                                    Whether you have a specific project in mind or just want to say hello, we’re all ears. Let’s collaborate to build something that truly matters.
+                                </motion.p>
+                            </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.5 }}
+                                className="hidden lg:block relative"
                             >
-                                Contact Us
-                            </motion.span>
-                            <motion.h1
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.1 }}
-                                className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1] mb-8"
-                            >
-                                Let’s start <br />
-                                <span className="text-primary italic">something.</span>
-                            </motion.h1>
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
-                                className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
-                            >
-                                Whether you have a specific project in mind or just want to say hello, we’re all ears. Let’s collaborate to build something that truly matters.
-                            </motion.p>
+                                <AnimatedContactGraphic />
+                            </motion.div>
                         </div>
                     </div>
                 </section>

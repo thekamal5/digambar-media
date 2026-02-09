@@ -5,6 +5,7 @@ import { ArrowRight, Lightbulb, Target, ShieldCheck, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AnimatedAboutHero from "@/components/AnimatedAboutHero";
 
 const values = [
     {
@@ -44,61 +45,113 @@ const AboutPage = () => {
 
             <main>
                 {/* HERO SECTION */}
-                <section className="relative min-h-[70vh] flex flex-col justify-center px-6 lg:px-12 pt-32 pb-20 overflow-hidden">
+                <section className="relative min-h-[85vh] flex flex-col justify-center px-6 lg:px-12 pt-24 pb-20 overflow-hidden">
                     {/* Background Gradients */}
-                    <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[120px] -z-10" />
-                    <div className="absolute bottom-[-10%] left-[-10%] w-[30vw] h-[30vw] bg-primary/10 rounded-full blur-[100px] -z-10" />
+                    <div className="absolute top-[-20%] right-[-20%] w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[150px] -z-10" />
+                    <div className="absolute bottom-[-20%] left-[-20%] w-[40vw] h-[40vw] bg-primary/10 rounded-full blur-[120px] -z-10" />
 
-                    <div className="container mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="max-w-4xl"
-                        >
-                            <h1 className="text-6xl md:text-8xl font-bold font-display tracking-tight mb-8">
-                                About <br />
-                                <span className="text-primary tracking-tight">Digambar Media</span>
-                            </h1>
-                            <p className="text-xl md:text-3xl text-muted-foreground leading-relaxed max-w-3xl">
-                                We are a Creative Agency Nepal and marketing agency Kathmandu helping organizations communicate with clarity, creativity, and purpose through marketing and branding Nepal excellence.
-                            </p>
-                        </motion.div>
+                    <div className="container mx-auto relative z-10">
+                        <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-16 items-center">
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                            >
+                                <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold font-display tracking-tight mb-8 leading-[0.85]">
+                                    About <br />
+                                    <span className="text-primary tracking-tight">Digambar</span>
+                                </h1>
+                                <p className="text-xl md:text-3xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                                    A strategy-led Creative Agency Nepal and marketing agency Kathmandu, helping organizations communicate with <span className="text-foreground font-medium underline decoration-primary/30 decoration-4 underline-offset-4">purpose</span> and <span className="text-foreground font-medium underline decoration-primary/30 decoration-4 underline-offset-4">clarity</span>.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.4 }}
+                                className="hidden lg:block"
+                            >
+                                <AnimatedAboutHero />
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Quick Stats Banner */}
+                    <div className="container mx-auto mt-24">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            {[
+                                { label: "Project Completed", value: "250+" },
+                                { label: "Satisfied Clients", value: "100+" },
+                                { label: "Years Experience", value: "8+" },
+                                { label: "Creative Experts", value: "15+" }
+                            ].map((stat, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.6 + (i * 0.1) }}
+                                    className="relative group p-6 rounded-2xl bg-secondary/30 border border-border/50 backdrop-blur-sm"
+                                >
+                                    <div className="text-3xl md:text-5xl font-bold font-display text-primary mb-2 group-hover:translate-x-2 transition-transform">{stat.value}</div>
+                                    <div className="text-xs uppercase font-bold tracking-widest text-muted-foreground">{stat.label}</div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
                 {/* WHO WE ARE */}
                 <section className="px-6 lg:px-12 py-20 lg:py-32 bg-secondary/20">
                     <div className="container mx-auto">
-                        <div className="grid lg:grid-cols-2 gap-16 items-start">
-                            <motion.h2
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-4xl md:text-5xl font-bold font-display"
-                            >
-                                Who We Are
-                            </motion.h2>
+                        <div className="grid lg:grid-cols-12 gap-16 items-start">
+                            {/* Image on the left (spanning 4 columns) */}
                             <motion.div
-                                initial={{ opacity: 0, x: 30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="space-y-6 text-xl leading-relaxed text-foreground/80"
+                                className="lg:col-span-4 relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl group"
                             >
-                                <p>
-                                    Digambar Media is a strategic branding and digital marketing agency in Nepal working at the intersection of strategy, creativity, and storytelling. As a Nepal creative agency, we collaborate with organizations, initiatives, and brands to shape meaningful communication across digital platforms in Kathmandu and beyond.
-                                </p>
-                                <p>
-                                    Our work as a full-service marketing agency Nepal spans brand strategy and identity, social media marketing Kathmandu, creative campaigns, professional video production Nepal, and documentary storytelling—designed to connect with people and create lasting impact.
-                                </p>
-                                <p>
-                                    We pride ourselves on being Nepali video makers who understand the local context while delivering world-class video branding Nepal and content creation in Nepal. Whether you need branding services Kathmandu or digital marketing Kathmandu, our team of experts is dedicated to your success.
-                                </p>
+                                <img
+                                    src="/team-digambar.png"
+                                    alt="Digambar Media Team"
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                             </motion.div>
+
+                            {/* Title and Content on the right (spanning 8 columns) */}
+                            <div className="lg:col-span-8">
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    className="text-4xl md:text-5xl font-bold font-display mb-12"
+                                >
+                                    Who We Are
+                                </motion.h2>
+                                <motion.div
+                                    initial={{ opacity: 0, x: 30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 }}
+                                    className="space-y-6 text-xl leading-relaxed text-foreground/80 font-light"
+                                >
+                                    <p>
+                                        Digambar Media is a strategic branding and digital marketing agency in Nepal working at the intersection of strategy, creativity, and storytelling. As a Nepal creative agency, we collaborate with organizations, initiatives, and brands to shape meaningful communication across digital platforms in Kathmandu and beyond.
+                                    </p>
+                                    <p>
+                                        Our work as a full-service marketing agency Nepal spans brand strategy and identity, social media marketing Kathmandu, creative campaigns, professional video production Nepal, and documentary storytelling—designed to connect with people and create lasting impact.
+                                    </p>
+                                    <p>
+                                        We pride ourselves on being Nepali video makers who understand the local context while delivering world-class video branding Nepal and content creation in Nepal. Whether you need branding services Kathmandu or digital marketing Kathmandu, our team of experts is dedicated to your success.
+                                    </p>
+                                </motion.div>
+                            </div>
                         </div>
                     </div>
                 </section>
+
 
                 {/* WHY WE EXIST */}
                 <section className="px-6 lg:px-12 py-20 lg:py-32">
@@ -129,17 +182,34 @@ const AboutPage = () => {
                 </section>
 
                 {/* WHAT WE BELIEVE IN (VALUES) */}
-                <section className="px-6 lg:px-12 py-20 lg:py-32 bg-foreground text-background">
-                    <div className="container mx-auto">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-bold font-display mb-16 text-center"
-                        >
-                            What We Believe In
-                        </motion.h2>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <section className="px-6 lg:px-12 py-24 lg:py-48 bg-foreground text-background relative overflow-hidden">
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[150px]" />
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full blur-[150px]" />
+                    </div>
+
+                    <div className="container mx-auto relative z-10">
+                        <div className="max-w-3xl mb-16 lg:mb-24">
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                className="text-primary font-bold tracking-widest uppercase mb-6 block"
+                            >
+                                Core Foundations
+                            </motion.span>
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-5xl md:text-7xl font-bold font-display mb-8"
+                            >
+                                What We Believe In
+                            </motion.h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {values.map((v, i) => (
                                 <motion.div
                                     key={i}
@@ -147,12 +217,14 @@ const AboutPage = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    whileHover={{ y: -10 }}
-                                    className="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors"
+                                    whileHover={{ y: -12, backgroundColor: "hsl(var(--primary) / 0.1)" }}
+                                    className="p-10 border border-white/5 rounded-[2rem] bg-white/5 transition-all duration-500 group"
                                 >
-                                    <v.icon className="w-10 h-10 text-primary mb-6" />
-                                    <h3 className="text-xl font-bold mb-4">{v.title}</h3>
-                                    <p className="text-white/60 leading-relaxed">{v.description}</p>
+                                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                        <v.icon className="w-8 h-8 text-primary" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">{v.title}</h3>
+                                    <p className="text-white/50 leading-relaxed text-lg group-hover:text-white/80 transition-colors">{v.description}</p>
                                 </motion.div>
                             ))}
                         </div>
