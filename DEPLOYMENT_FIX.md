@@ -32,6 +32,21 @@ base: "/"
 ```
 This is correct for a root domain deployment like `digambarmedia.com`.
 
+## ⚠️ CRITICAL STEP: Fix GitHub Pages Settings
+
+**The white screen is happening because GitHub is serving your source code instead of the built website.**
+
+You MUST change this setting on GitHub:
+
+1. Go to your repository on GitHub.com
+2. Click **Settings** tab (top right)
+3. Click **Pages** (sidebar on left)
+4. Under **Build and deployment** > **Branch**:
+   - Change the dropdown from `main` to **`gh-pages`**
+   - Click **Save**
+
+Once you do this, the site will work within 1-2 minutes.
+
 ## How to Deploy the Fix
 
 ### Step 1: Build the Project
