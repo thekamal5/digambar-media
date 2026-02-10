@@ -106,24 +106,20 @@ const PricingPackages = () => {
 
     return (
         <section id="packages" className="py-16 lg:py-20 bg-gradient-to-b from-background via-background to-muted/20 relative overflow-hidden">
-            {/* Animated background elements */}
+            {/* Animated background elements - Optimized */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
                     animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                        opacity: [0.03, 0.05, 0.03],
+                        opacity: [0.02, 0.04, 0.02],
                     }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"
                 />
                 <motion.div
                     animate={{
-                        scale: [1.2, 1, 1.2],
-                        rotate: [90, 0, 90],
-                        opacity: [0.03, 0.05, 0.03],
+                        opacity: [0.04, 0.02, 0.04],
                     }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-gradient-to-tl from-primary/10 to-transparent rounded-full blur-3xl"
                 />
             </div>
@@ -190,13 +186,13 @@ const PricingPackages = () => {
                             <motion.div
                                 animate={{
                                     y: hoveredIndex === index ? -8 : 0,
-                                    scale: hoveredIndex === index ? 1.02 : 1,
                                 }}
-                                transition={{ duration: 0.3, ease: "easeOut" }}
-                                className={`relative h-full rounded-3xl overflow-hidden ${pkg.recommended
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                                className={`relative h-full rounded-3xl overflow-hidden will-change-transform ${pkg.recommended
                                     ? "ring-2 ring-primary/50 shadow-2xl shadow-primary/20"
                                     : "ring-1 ring-border/50"
                                     } bg-card backdrop-blur-xl`}
+                                style={{ transform: "translate3d(0, 0, 0)" }}
                             >
                                 {/* Gradient overlay on hover */}
                                 <motion.div
@@ -235,10 +231,10 @@ const PricingPackages = () => {
                                         {pkg.features.map((feature, featureIndex) => (
                                             <motion.div
                                                 key={feature.name}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
                                                 viewport={{ once: true }}
-                                                transition={{ delay: 0.1 * featureIndex }}
+                                                transition={{ delay: 0.05 * featureIndex, duration: 0.3 }}
                                                 className="flex items-start gap-3 group/feature"
                                             >
                                                 <div
