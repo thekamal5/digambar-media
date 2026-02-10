@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Work", href: "/#work" },
+  { label: "Packages", href: "/#packages" },
   { label: "Services", href: "/services" },
   { label: "Approach", href: "/our-approach" },
   { label: "About", href: "/about" },
@@ -54,7 +54,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-2">
             <div className="bg-secondary/50 backdrop-blur-md border border-border/40 rounded-full px-2 py-1 flex items-center gap-1">
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.href || (link.href === "/#work" && location.pathname === "/" && location.hash === "#work");
+                const isActive = location.pathname === link.href || (link.href === "/#packages" && location.pathname === "/" && location.hash === "#packages");
                 return (
                   <Link
                     key={link.label}

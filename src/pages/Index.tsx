@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Work from "@/components/Work";
+import PricingPackages from "@/components/PricingPackages";
 import Approach from "@/components/Approach";
 import About from "@/components/About";
 import Clients from "@/components/Clients";
@@ -24,7 +24,7 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
-        <Work />
+        <PricingPackages />
         <Approach />
         <About />
         <Clients />
