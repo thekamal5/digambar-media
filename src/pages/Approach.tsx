@@ -7,29 +7,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useRef } from "react";
 import AnimatedApproachHero from "@/components/AnimatedApproachHero";
+import { approachSteps as processSteps } from "@/data/approach";
 
-const processSteps = [
-    {
-        number: "01",
-        title: "Research & Insight",
-        description: "We begin by understanding the brand, audience, context, and challenges. Through branding research in Nepal and listening, we uncover insights that shape every strategic decision."
-    },
-    {
-        number: "02",
-        title: "Strategy & Direction",
-        description: "Based on insights, we develop a clear strategy that defines positioning, messaging, tone, and direction. This brand strategy foundation guides social media marketing Nepal, creative campaigns, and content."
-    },
-    {
-        number: "03",
-        title: "Creativity & Production",
-        description: "We translate strategy into creative outcomes—designing brand identities, crafting campaigns, and implementing a professional video production workflow in Nepal that connects emotionally."
-    },
-    {
-        number: "04",
-        title: "Delivery & Impact",
-        description: "We execute with care and measure impact wherever possible. Our focus is on clarity, consistency, and meaningful engagement for brands in the Kathmandu market and beyond."
-    }
-];
+
 
 const ApproachPage = () => {
     const processRef = useRef(null);

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { stats } from "@/data/stats";
 
 const About = () => {
   return (
@@ -150,32 +151,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="grid grid-cols-2 gap-4"
             >
-              {[
-                {
-                  value: "50+",
-                  label: "Projects",
-                  color: "from-amber-400 to-orange-500",
-                  details: "Delivered Excellence across diverse industries."
-                },
-                {
-                  value: "8",
-                  label: "Years",
-                  color: "from-sky-400 to-blue-500",
-                  details: "Of dedication, learning, and growth."
-                },
-                {
-                  value: "30+",
-                  label: "Clients",
-                  color: "from-emerald-400 to-teal-500",
-                  details: "Trusting us with their brand vision."
-                },
-                {
-                  value: "∞",
-                  label: "Ideas",
-                  color: "from-violet-400 to-purple-500",
-                  details: "Limitless creativity for every challenge."
-                },
-              ].map((stat, index) => (
+              {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.9 }}

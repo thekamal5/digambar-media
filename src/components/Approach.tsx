@@ -2,33 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const steps = [
-  {
-    number: "1",
-    title: "Research & Insight",
-    description: "Deep dive into your brand, market, and audience to uncover strategic opportunities.",
-  },
-  {
-    number: "2",
-    title: "Strategy & Planning",
-    description: "Develop a clear roadmap that aligns with your goals and maximizes impact.",
-  },
-  {
-    number: "3",
-    title: "Creative Development",
-    description: "Craft compelling concepts and visuals that bring your strategy to life.",
-  },
-  {
-    number: "4",
-    title: "Production & Execution",
-    description: "Execute with precision, delivering high-quality assets across all touchpoints.",
-  },
-  {
-    number: "5",
-    title: "Distribution & Impact",
-    description: "Launch strategically and measure results to ensure lasting success.",
-  },
-];
+import { approachSteps as steps } from "@/data/approach";
+
 
 const SketchedCircle = ({ delay = 0 }) => (
   <svg className="absolute inset-0 w-full h-full pointer-events-none -z-10 text-primary" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">

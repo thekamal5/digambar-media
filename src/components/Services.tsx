@@ -2,53 +2,25 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Rocket, Share2, Lightbulb, Video, Film, ArrowRight } from "lucide-react";
 
-const services = [
-  {
-    icon: Rocket,
-    title: "Branding Services Nepal",
-    slug: "branding-services-nepal",
-    description: "Expert branding services Nepal. We craft distinctive brand strategy and identity design in Kathmandu.",
-    gradient: "from-amber-400 to-orange-500",
-    shadowColor: "shadow-amber-500/30",
-    delay: 0,
-  },
-  {
-    icon: Share2,
-    title: "Digital Marketing Services Nepal",
-    slug: "digital-marketing-services-nepal",
-    description: "Strategic digital marketing services Nepal. Building communities and digital strategy Nepal across platforms.",
-    gradient: "from-sky-400 to-blue-500",
-    shadowColor: "shadow-sky-500/30",
-    delay: 0.1,
-  },
-  {
-    icon: Lightbulb,
-    title: "Creative Agency Nepal",
-    slug: "creative-agency-nepal",
-    description: "Bold campaigns and content creation Nepal that cut through noise and create meaningful connections.",
-    gradient: "from-violet-400 to-purple-500",
-    shadowColor: "shadow-violet-500/30",
-    delay: 0.2,
-  },
-  {
-    icon: Video,
-    title: "Video Production Services Nepal",
-    slug: "video-production-services-nepal",
-    description: "From short-form content to video production Kathmandu, we produce professional videos that captivate.",
-    gradient: "from-rose-400 to-pink-500",
-    shadowColor: "shadow-rose-500/30",
-    delay: 0.3,
-  },
-  {
-    icon: Film,
-    title: "Documentary Production Nepal",
-    slug: "documentary-production-nepal",
-    description: "Documentary filmmaking Nepal narratives that inspire, inform, and leave a lasting emotional impact.",
-    gradient: "from-emerald-400 to-teal-500",
-    shadowColor: "shadow-emerald-500/30",
-    delay: 0.4,
-  },
-];
+import { services } from "@/data/services";
+
+// Helper to get gradients since they aren't in the main data
+const getServiceStyle = (slug: string) => {
+  switch (slug) {
+    case "branding-services-nepal":
+      return { gradient: "from-amber-400 to-orange-500", shadowColor: "shadow-amber-500/30", delay: 0 };
+    case "digital-marketing-services-nepal":
+      return { gradient: "from-sky-400 to-blue-500", shadowColor: "shadow-sky-500/30", delay: 0.1 };
+    case "creative-agency-nepal":
+      return { gradient: "from-violet-400 to-purple-500", shadowColor: "shadow-violet-500/30", delay: 0.2 };
+    case "video-production-services-nepal":
+      return { gradient: "from-rose-400 to-pink-500", shadowColor: "shadow-rose-500/30", delay: 0.3 };
+    case "documentary-production-nepal":
+      return { gradient: "from-emerald-400 to-teal-500", shadowColor: "shadow-emerald-500/30", delay: 0.4 };
+    default:
+      return { gradient: "from-primary to-primary-light", shadowColor: "shadow-primary/30", delay: 0 };
+  }
+};
 
 const FloatingParticle = ({ delay, x, y }: { delay: number; x: number; y: number }) => (
   <motion.div
@@ -95,82 +67,85 @@ const Services = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <Link key={service.title} to={`/services/${service.slug}`}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: service.delay }}
-                className="group relative p-8 bg-card rounded-2xl shadow-card hover:shadow-hover transition-all duration-500 h-full"
-              >
-                {/* Animated icon container */}
-                <div className="relative w-16 h-16 mb-6">
-                  {/* Glow effect */}
-                  <motion.div
-                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.gradient} opacity-0 blur-xl group-hover:opacity-60 transition-opacity duration-500`}
-                  />
-
-                  {/* Rotating ring */}
-                  <motion.div
-                    className={`absolute inset-0 rounded-2xl border-2 border-dashed opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
-                    style={{ borderColor: 'currentColor' }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  />
-
-                  {/* Icon background with gradient */}
-                  <motion.div
-                    className={`relative w-full h-full flex items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg ${service.shadowColor}`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  >
-                    {/* Floating particles on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <FloatingParticle delay={0} x={-15} y={-20} />
-                      <FloatingParticle delay={0.2} x={20} y={-15} />
-                      <FloatingParticle delay={0.4} x={15} y={20} />
-                      <FloatingParticle delay={0.6} x={-20} y={15} />
-                    </div>
-
-                    {/* Icon with pulse animation */}
+          {services.map((service) => {
+            const style = getServiceStyle(service.slug);
+            return (
+              <Link key={service.title} to={`/services/${service.slug}`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: style.delay }}
+                  className="group relative p-8 bg-card rounded-2xl shadow-card hover:shadow-hover transition-all duration-500 h-full"
+                >
+                  {/* Animated icon container */}
+                  <div className="relative w-16 h-16 mb-6">
+                    {/* Glow effect */}
                     <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${style.gradient} opacity-0 blur-xl group-hover:opacity-60 transition-opacity duration-500`}
+                    />
+
+                    {/* Rotating ring */}
+                    <motion.div
+                      className={`absolute inset-0 rounded-2xl border-2 border-dashed opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
+                      style={{ borderColor: 'currentColor' }}
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    />
+
+                    {/* Icon background with gradient */}
+                    <motion.div
+                      className={`relative w-full h-full flex items-center justify-center rounded-2xl bg-gradient-to-br ${style.gradient} shadow-lg ${style.shadowColor}`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
-                      <service.icon className="w-7 h-7 text-white drop-shadow-md" />
+                      {/* Floating particles on hover */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <FloatingParticle delay={0} x={-15} y={-20} />
+                        <FloatingParticle delay={0.2} x={20} y={-15} />
+                        <FloatingParticle delay={0.4} x={15} y={20} />
+                        <FloatingParticle delay={0.6} x={-20} y={15} />
+                      </div>
+
+                      {/* Icon with pulse animation */}
+                      <motion.div
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <service.icon className="w-7 h-7 text-white drop-shadow-md" />
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
 
-                  {/* Orbiting dot */}
-                  <motion.div
-                    className={`absolute w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100`}
-                    animate={{
-                      rotate: 360,
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transformOrigin: '0 -28px',
-                      marginLeft: '-4px',
-                      marginTop: '-4px'
-                    }}
-                  />
-                </div>
+                    {/* Orbiting dot */}
+                    <motion.div
+                      className={`absolute w-2 h-2 rounded-full bg-gradient-to-r ${style.gradient} opacity-0 group-hover:opacity-100`}
+                      animate={{
+                        rotate: 360,
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                      style={{
+                        top: '50%',
+                        left: '50%',
+                        transformOrigin: '0 -28px',
+                        marginLeft: '-4px',
+                        marginTop: '-4px'
+                      }}
+                    />
+                  </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.shortDescription}
+                  </p>
 
-                {/* Decorative corner accent */}
-                <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 rounded-bl-[60px] rounded-tr-2xl transition-opacity duration-500`} />
-              </motion.div>
-            </Link>
-          ))}
+                  {/* Decorative corner accent */}
+                  <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${style.gradient} opacity-0 group-hover:opacity-5 rounded-bl-[60px] rounded-tr-2xl transition-opacity duration-500`} />
+                </motion.div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

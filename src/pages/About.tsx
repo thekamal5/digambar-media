@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedAboutHero from "@/components/AnimatedAboutHero";
+import { stats } from "@/data/stats";
 
 const values = [
     {
@@ -80,12 +81,7 @@ const AboutPage = () => {
                     {/* Quick Stats Banner */}
                     <div className="container mx-auto mt-24">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                            {[
-                                { label: "Project Completed", value: "250+" },
-                                { label: "Satisfied Clients", value: "100+" },
-                                { label: "Years Experience", value: "8+" },
-                                { label: "Creative Experts", value: "15+" }
-                            ].map((stat, i) => (
+                            {stats.map((stat, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: 20 }}

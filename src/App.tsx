@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -23,14 +20,14 @@ const AppContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Show loader on initial load and route changes
-    setIsLoading(true);
+    // Show loader ONLY on initial app load, not on every route change
+    // This makes navigation feel much smoother
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Display loader for 1.5 seconds
+    }, 1500);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, []); // Empty dependency array means this only runs once on mount
 
   return (
     <>
@@ -54,13 +51,9 @@ const AppContent = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <HashRouter>
-          <AppContent />
-        </HashRouter>
-      </TooltipProvider>
+      <HashRouter>
+        <AppContent />
+      </HashRouter>
     </HelmetProvider>
   </QueryClientProvider>
 );
