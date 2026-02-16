@@ -7,6 +7,7 @@ const footerLinks = {
     { label: "Services", href: "/services" },
     { label: "Approach", href: "/our-approach" },
     { label: "About", href: "/about" },
+    { label: "Brand & Beyond", href: "/brand-and-beyond" },
     { label: "Contact", href: "/contact" },
   ],
   social: [
